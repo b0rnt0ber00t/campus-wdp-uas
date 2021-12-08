@@ -1,4 +1,12 @@
-<?php require_once('controller/auth.php'); ?>
+<?php
+
+    // require or include file auth from controller
+    require_once('controller/auth.php');
+
+    // run method register
+    isset($_POST['username']) ? register() : null;
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Kasir - Register</title>
 
     <!-- Custom fonts for this template-->
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,24 +46,22 @@
                               <div class="text-center">
                                   <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                               </div>
-                              <form class="user">
+                              <form class="user" method="POST" action="">
                                   <div class="form-group">
-                                      <input type="username" class="form-control form-control-user" id="username"
-                                          placeholder="Username">
+                                      <input type="username" class="form-control form-control-user"
+                                        id="username" name="username" placeholder="Username">
                                   </div>
                                   <div class="form-group row">
                                       <div class="col-sm-6 mb-3 mb-sm-0">
                                           <input type="password" class="form-control form-control-user"
-                                              id="password" placeholder="Password">
+                                              id="password" name="password" placeholder="Password">
                                       </div>
                                       <div class="col-sm-6">
                                           <input type="password" class="form-control form-control-user"
-                                              id="RepeatPassword" placeholder="Repeat Password">
+                                              id="repeat_password" name="repeat_password" placeholder="Repeat Password">
                                       </div>
                                   </div>
-                                  <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                      Register Account
-                                  </a>
+                                  <button type="submit" class="btn btn-primary btn-user btn-block">Register Account</button>
                               </form>
                               <hr>
                               <div class="text-center">
