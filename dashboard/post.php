@@ -5,6 +5,9 @@
 
     // get my post
     $posts = my_post();
+
+    isset(request_get()->delete_post_id)
+    ? delete_post() : null;
 ?>
 
 <div class="container">
@@ -18,7 +21,7 @@
           <h5 class="card-title"><?= $post['title']; ?></h5>
           <p class="card-text"><?= $post['message']; ?></p>
           <a href="<?= base_url() . '/dashboard/postupdate.php?post_id=' . $post['id']; ?>" class="badge badge-primary px-2 py-1">update post</a>
-          <a href="#" class="badge badge-danger px-2 py-1">delete post</a>
+          <a href="<?= base_url() . '/dashboard/post.php?delete_post_id=' . $post['id']; ?>" class="badge badge-danger px-2 py-1">delete post</a>
         </div>
       </div>
     </div>

@@ -42,3 +42,19 @@
     ? '<div class="alert alert-success mt-3 mx-2" role="alert">Success Update Post!</div>'
     : '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Update Post!</div>';
   }
+
+  function delete_post()
+  {
+    global $mysql;
+
+    // prepare
+    $post_id = request_get()->delete_post_id;
+
+    // query delete where id=post_id
+    $sql = "DELETE FROM posts WHERE id='{$post_id}'";
+    $mysql->query($sql);
+
+    echo $mysql->affected_rows
+    ? '<div class="alert alert-success mt-3 mx-2" role="alert">Success Delete Post! refresh page!</div>'
+    : '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Delete Post!</div>';
+  }
