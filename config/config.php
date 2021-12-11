@@ -5,7 +5,11 @@
     return $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/big-project-wdp';
   }
 
-  function get_user_name()
+  // get username
+  function get_username($id)
   {
-    return '';
+    global $mysql;
+
+    $sql = "SELECT username FROM users WHERE id='{$id}'";
+    return $mysql->query($sql)->fetch_assoc()['username'];
   }
