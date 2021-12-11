@@ -2,7 +2,7 @@
   require_once('app/core.php');
 
   // check is loged in
-  $is_login ? die(header('Location: dashboard')) : null;
+  $is_login ? die(header("Location: " . base_url() . "/dashboard")) : null;
 
   function login()
   {
@@ -22,7 +22,7 @@
   function _login(object $result)
   {
     $_SESSION['data'] = [
-      'id_user' => $result->id,
+      'user_id' => $result->id,
       'sign_in' => true,
     ];
     header('Location: dashboard');
@@ -47,6 +47,6 @@
     $mysql->query($sql);
 
     echo $mysql->affected_rows
-    ? '<div class="alert alert-primary mt-3 mx-2" role="alert">Registert Success!</div>'
+    ? '<div class="alert alert-success mt-3 mx-2" role="alert">Registert Success!</div>'
     : '<div class="alert alert-danger mt-3 mx-2" role="alert">Registert Failed!</div>';
   }

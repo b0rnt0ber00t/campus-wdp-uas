@@ -8,3 +8,6 @@
 
   // method files
   function request_files() { return (object) $_FILES; }
+
+  // session
+  function request_session() { return (object) $_SESSION; }
