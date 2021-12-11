@@ -51,7 +51,7 @@
     $post_id = request_get()->delete_post_id;
 
     // redirect if post not found
-    get_post($post_id) == null ? header('Location: '. base_url() . '/dashboard/post.php');
+    get_post($post_id) == null ? header('Location: '. base_url() . '/dashboard/post.php') : null;
 
     // query delete where id=post_id
     $sql = "DELETE FROM posts WHERE id='{$post_id}'";
