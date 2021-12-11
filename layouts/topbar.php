@@ -10,8 +10,8 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                         <a class="nav-link active" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
-                        <a class="nav-link" href="#">All Post</a>
-                        <a class="nav-link" href="#">My Post</a>
+                        <a class="nav-link" href="<?= base_url() . '/dashboard/posts.php' ?>">All Post</a>
+                        <a class="nav-link" href="<?= base_url() . '/dashboard/post.php' ?>">My Post</a>
                         <a class="nav-link" href="<?= base_url() . '/logout.php'; ?>">
                             <button class="btn btn-primary">Sign Out</button>
                         </a>

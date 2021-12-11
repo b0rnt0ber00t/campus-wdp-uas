@@ -8,8 +8,6 @@
     ? create_new_post() : null;
 ?>
 
-<!-- Page Heading -->
-<!-- <h1 class="h3 mb-4 text-gray-800">Post</h1> -->
 <div class="row">
     <div class="col-md-8 mb-3 new_post d-none">
         <form action="" method="post" enctype="multipart/form-data">
