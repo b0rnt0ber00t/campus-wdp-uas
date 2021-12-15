@@ -40,9 +40,7 @@
     <script src="../assets/js/bs-custom-file-input.js"></script>
 
     <script>
-        $(document).ready(function () {
-            bsCustomFileInput.init()
-        })
+        $(document).ready(function () { bsCustomFileInput.init() })
 
         // page dashboard
         let show_post = $('.show_post')

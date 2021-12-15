@@ -8,6 +8,7 @@
   {
     global $mysql;
 
+    // prepare
     $user_id = request_session()->data['user_id'];
     // query select all order desc
     $sql     = "SELECT * FROM posts WHERE user_id='{$user_id}' ORDER BY id DESC";
@@ -58,6 +59,16 @@
     $mysql->query($sql);
 
     echo $mysql->affected_rows
-    ? '<div class="alert alert-success mt-3 mx-2" role="alert">Success Delete Post! refresh page!</div>'
+    ? '<div class="alert alert-success mt-3 mx-2" role="alert">Success Delete Post!</div>'
     : '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Delete Post!</div>';
+  }
+
+  function search_post(string $title)
+  {
+    global $mysql;
+
+    // query search where title like $title
+    $sql = "SELECT * FROM posts WHERE title LIKE '%{$title}%'";
+
+    return $mysql->query($sql)->fetch_all(MYSQLI_ASSOC);
   }

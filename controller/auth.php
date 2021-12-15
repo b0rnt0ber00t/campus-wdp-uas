@@ -46,7 +46,7 @@
     $sql = "INSERT INTO users (username, password) VALUES ('{$username}', '{$password}')";
     $mysql->query($sql);
 
-    echo $mysql->affected_rows
+    echo $mysql->affected_rows == 1
     ? '<div class="alert alert-success mt-3 mx-2" role="alert">Registert Success!</div>'
     : '<div class="alert alert-danger mt-3 mx-2" role="alert">Registert Failed!</div>';
   }
