@@ -16,6 +16,17 @@
     return $mysql->query($sql)->fetch_all(MYSQLI_ASSOC);
   }
 
+  // get all post with news output
+  function all_post()
+  {
+    global $mysql;
+
+    // prepare
+    $sql = "SELECT * FROM posts ORDER BY id DESC";
+
+    return $mysql->query($sql)->fetch_all(MYSQLI_ASSOC);
+  }
+
   function get_post($id)
   {
     global $mysql;
@@ -63,12 +74,17 @@
     : '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Delete Post!</div>';
   }
 
-  function search_post(string $title)
+  function search_post(string $title, bool $is_user=true)
   {
     global $mysql;
 
+    // user id
+    $user_id = request_session()->data['user_id'];
+
     // query search where title like $title
-    $sql = "SELECT * FROM posts WHERE title LIKE '%{$title}%'";
+    $sql = $is_user
+    ? "SELECT * FROM posts WHERE title LIKE '%{$title}%' AND user_id='{$user_id}'"
+    : "SELECT * FROM posts WHERE title LIKE '%{$title}%'";
 
     return $mysql->query($sql)->fetch_all(MYSQLI_ASSOC);
   }
