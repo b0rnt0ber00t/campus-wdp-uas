@@ -6,7 +6,7 @@
   }
 
   // get username
-  function get_username($id)
+  function get_username(int $id)
   {
     global $mysql;
 
