@@ -26,7 +26,10 @@
     }
 
     // query insert
-    $sql = "INSERT INTO posts(user_id, title, message) VALUES ('{$user_id}', '{$title}', '{$message}')";
+    $sql = $file->name == null
+    ? "INSERT INTO posts(user_id, title, message) VALUES ('{$user_id}', '{$title}', '{$message}')"
+    : "INSERT INTO posts(user_id, title, message, file) VALUES ('{$user_id}', '{$title}', '{$message}', '{$file_name}')";
+
     $mysql->query($sql);
     
     echo $mysql->affected_rows == 1

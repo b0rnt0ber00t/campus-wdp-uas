@@ -27,7 +27,7 @@
             <p class="card-text"><?= $post['message']; ?></p>
             <p class="card-text">attatch: <?= $post['file'] ? $post['file'] : 'none'; ?></p>
             <?php if ($post['file'] != null) : ?>
-              <a href="<?= base_url() . '/assets/files/' . $post['file']; ?>" class="badge badge-primary px-2 py-1" download="">download file</a>
+              <a href="<?= base_url() . '/assets/files/' . $post['file']; ?>" class="badge badge-success px-2 py-1" download="">download file</a>
             <?php endif ?>
             <span class="badge badge-info px-2 py-1"><?= get_username($post['user_id']); ?></span>
           </div>

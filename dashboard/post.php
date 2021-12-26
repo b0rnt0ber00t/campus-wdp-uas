@@ -30,6 +30,9 @@
             <h5 class="card-title"><?= $post['title']; ?></h5>
             <p class="card-text"><?= $post['message']; ?></p>
             <p class="card-text">attatch: <?= $post['file'] ? $post['file'] : 'none'; ?></p>
+            <?php if ($post['file'] != null) : ?>
+              <a href="<?= base_url() . '/assets/files/' . $post['file']; ?>" class="badge badge-success px-2 py-1" download="">download file</a>
+            <?php endif ?>
             <a href="<?= base_url() . '/dashboard/postupdate.php?post_id=' . $post['id']; ?>" class="badge badge-primary px-2 py-1">update post</a>
             <a href="<?= base_url() . '/dashboard/post.php?delete_post_id=' . $post['id']; ?>" class="badge badge-danger px-2 py-1">delete post</a>
           </div>
