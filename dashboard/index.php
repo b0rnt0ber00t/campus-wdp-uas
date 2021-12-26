@@ -27,8 +27,8 @@
                         <textarea class="form-control" name="message" id="message" rows="3"></textarea>
                     </div>
                     <div class="custom-file mb-3">
-                        <input type="file" class="custom-file-input" name="customFile" id="customFile">
-                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <input type="file" class="custom-file-input" name="file" id="file">
+                        <label class="custom-file-label" for="file">Choose file</label>
                     </div>
                     <button type="submit" class="btn btn-primary">Post</button>
                 </div>
