@@ -45,8 +45,8 @@
                     <div class="col-6">
                         <span class="btn btn-primary show_post">New Post</span>
                     </div>
-                    <div class="col-6">
-                        <span class="btn btn-primary">Edit Profile</span>
+                    <div class="d-flex col-6 justify-content-end">
+                        <a href="profile.php" class="btn btn-primary">Account</a>
                     </div>
                 </div>
             </div>
