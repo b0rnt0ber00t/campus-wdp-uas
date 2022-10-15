@@ -46,7 +46,7 @@ isset(request_post()->title) && isset(request_post()->message)
                         <span class="btn btn-primary show_post">New Post</span>
                     </div>
                     <div class="d-flex col-6 justify-content-end">
-                        <a href="dashboard/profile.php" class="btn btn-primary">Account</a>
+                        <a href="profile.php" class="btn btn-primary">Account</a>
                     </div>
                 </div>
             </div>

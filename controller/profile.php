@@ -1,11 +1,20 @@
 <?php
 
-  // check is loged in
-  !$is_login ? die(header("Location: ". base_url() ."/login.php")) : null;
+// check is loged in
+!$is_login ? die(header("Location: " . base_url() . "/login.php")) : null;
 
-  function update_password()
-  {
-    global $mysql;
+function update_password()
+{
+  global $mysql;
+
+  // user change password validate
+  if (
+    empty(request_post()->old_password) ||
+    empty(request_post()->new_password) ||
+    empty(request_post()->conf_password)
+  ) {
+    echo '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Update Password!</div>';
+  } else {
 
     // prepare
     $old_password  = request_post()->old_password;
@@ -32,6 +41,7 @@
     $mysql->query($sql);
 
     echo $mysql->affected_rows == 1
-    ? '<div class="alert alert-success mt-3 mx-2" role="alert">Success Update Password!</div>'
-    : '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Update Password!</div>';
+      ? '<div class="alert alert-success mt-3 mx-2" role="alert">Success Update Password!</div>'
+      : '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Update Password!</div>';
   }
+}
