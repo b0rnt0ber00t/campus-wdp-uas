@@ -1,17 +1,18 @@
 <?php
-  // start session
-  session_start();
 
-  // default session
-  $is_login = !isset($_SESSION['data']['sign_in']) || $_SESSION['data']['sign_in'] == null ? false : true;
+// start session
+session_start();
 
-  // variable
-  $app    = './app/';
-  $config = './config/';
+// default session
+$is_login = !isset($_SESSION['data']['sign_in']) || $_SESSION['data']['sign_in'] == null ? false : true;
 
-  // app
-  require_once($app . 'request.php');
+// variable
+$app    = './app/';
+$config = './config/';
 
-  // config
-  require_once($config . 'config.php');   // config
-  require_once($config . 'database.php'); // database connection
+// app
+require_once($app . 'request.php');
+
+// config
+require_once($config . 'config.php');   // config
+require_once($config . 'database.php'); // database connection

@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS `campus-wdp`;
+
+CREATE DATABASE `campus-wdp`;
+
 DROP TABLE IF EXISTS `posts`;
 
 CREATE TABLE `posts` (

@@ -1,10 +1,10 @@
 <?php
-    require_once('../layouts/header.php');
-    require_once('../layouts/topbar.php');
-    require_once('../controller/dashboard.php');
+require_once('../layouts/header.php');
+require_once('../layouts/topbar.php');
+require_once('../controller/dashboard.php');
 
-    // create new post
-    isset(request_post()->title) && isset(request_post()->message)
+// create new post
+isset(request_post()->title) && isset(request_post()->message)
     ? create_new_post() : null;
 ?>
 
@@ -46,7 +46,7 @@
                         <span class="btn btn-primary show_post">New Post</span>
                     </div>
                     <div class="d-flex col-6 justify-content-end">
-                        <a href="profile.php" class="btn btn-primary">Account</a>
+                        <a href="dashboard/profile.php" class="btn btn-primary">Account</a>
                     </div>
                 </div>
             </div>
@@ -55,5 +55,5 @@
 </div>
 
 <?php
-    require_once('../layouts/footer.php');
+require_once('../layouts/footer.php');
 ?>

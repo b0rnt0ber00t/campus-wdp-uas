@@ -1,17 +1,18 @@
 <?php
-  // get base url
-  function base_url()
-  {
-    return $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/big-project-wdp';
-  }
 
-  // get username
-  function get_username(int $id)
-  {
-    global $mysql;
+// get base url
+function base_url()
+{
+  return $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '';
+}
 
-    // query where id = $id
-    $sql = "SELECT username FROM users WHERE id='{$id}'";
+// get username
+function get_username(int $id)
+{
+  global $mysql;
 
-    return $mysql->query($sql)->fetch_assoc()['username'];
-  }
+  // query where id = $id
+  $sql = "SELECT username FROM users WHERE id='{$id}'";
+
+  return $mysql->query($sql)->fetch_assoc()['username'];
+}
