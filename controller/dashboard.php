@@ -1,12 +1,17 @@
 <?php
 
-  // check is loged in
-  !$is_login ? die(header("Location: ". base_url() ."/login.php")) : null;
+// check is loged in
+!$is_login ? die(header("Location: " . base_url() . "/login.php")) : null;
 
-  // create new post
-  function create_new_post()
-  {
-    global $mysql;
+// create new post
+function create_new_post()
+{
+  global $mysql;
+
+  // validate request
+  if (empty(request_post()->title) || empty(request_post()->message)) {
+    echo '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Create New Post!</div>';
+  } else {
 
     // perpare input
     $user_id = request_session()->data['user_id'];
@@ -27,12 +32,13 @@
 
     // query insert
     $sql = $file->name == null
-    ? "INSERT INTO posts(user_id, title, message) VALUES ('{$user_id}', '{$title}', '{$message}')"
-    : "INSERT INTO posts(user_id, title, message, file) VALUES ('{$user_id}', '{$title}', '{$message}', '{$file_name}')";
+      ? "INSERT INTO posts(user_id, title, message) VALUES ('{$user_id}', '{$title}', '{$message}')"
+      : "INSERT INTO posts(user_id, title, message, file) VALUES ('{$user_id}', '{$title}', '{$message}', '{$file_name}')";
 
     $mysql->query($sql);
-    
+
     echo $mysql->affected_rows == 1
-    ? '<div class="alert alert-success mt-3 mx-2" role="alert">Success Create New Post!</div>'
-    : '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Create New Post!</div>';
+      ? '<div class="alert alert-success mt-3 mx-2" role="alert">Success Create New Post!</div>'
+      : '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Create New Post!</div>';
   }
+}
