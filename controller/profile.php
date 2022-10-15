@@ -11,7 +11,8 @@ function update_password()
   if (
     empty(request_post()->old_password) ||
     empty(request_post()->new_password) ||
-    empty(request_post()->conf_password)
+    empty(request_post()->conf_password) ||
+    empty(request_session()->data['user_id'])
   ) {
     echo '<div class="alert alert-danger mt-3 mx-2" role="alert">Failed Update Password!</div>';
   } else {
